@@ -17,7 +17,6 @@ class MixString {
             answer+= str1.charAt(i);
             answer+= str2.charAt(i);
         }
-
         return answer;
     }
      */
