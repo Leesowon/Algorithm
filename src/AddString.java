@@ -1,15 +1,12 @@
 class AddString {
     public static String solution(String my_string, String overwrite_string, int s) {
-        char[] origin = my_string.toCharArray();
-        char[] over = overwrite_string.toCharArray();
-//        char[] result = new char[my_string.length()];
 
-        for (int i = s ; i < s + overwrite_string.length() ; i++) {
-            for (int j = 0 ; j < overwrite_string.length() ; j++) {
-                origin[i] = over[j];
-            }
-        }
-            String answer = String.valueOf(origin);
+            String answer = "";
+
+            String str1 = my_string.substring(0,s);
+            String str2 = my_string.substring(overwrite_string.length()+ str1.length(), my_string.length());
+
+            answer = str1 + overwrite_string + str2;
             return answer;
     }
 
