@@ -84,6 +84,8 @@ public class UserRegister {
             // e-mail
             System.out.print("email : ");
             String email = sc.nextLine();
+
+            //
         }
     }
 }
