@@ -7,7 +7,7 @@ public class UserRegister {
 
         Scanner sc = new Scanner(System.in);
         System.out.println("======================");
-        System.out.println("회원 등록");
+        System.out.println("회원 등록을 시작합니다.");
         System.out.println("======================");
 
         boolean register = false;
@@ -85,7 +85,27 @@ public class UserRegister {
             System.out.print("email : ");
             String email = sc.nextLine();
 
-            //
+            user.put("name", name);
+            user.put("username", username);
+            user.put("pw", pw);
+            user.put("birth", birth);
+            user.put("email", email);
+
+            users.add(user);
+
+            System.out.println("======================");
+            System.out.println(user.get("name")+" 님, 회원가입이 완료되었습니다.");
+            System.out.println("ID는 " + user.get("username") + "입니다.");
+            System.out.println("======================");
+
+            System.out.println("회원가입을 추가로 진행하시겠습니까? \ny : 진행    n : 종료");
+            System.out.print(">> ");
+            String register_again = sc.nextLine();
+
+            if(register_again.equalsIgnoreCase("y")){
+            } else if (register_again.equalsIgnoreCase("n")){
+                System.exit(0);
+            }
         }
     }
 }
