@@ -9,7 +9,9 @@ arithmetic series
 3) boolean 배열 속 true인 index 찾기
 4) 해당 index의 등차 배열의 값들 더하기
 
-배열을 따로 만들어줄 필요없이 included 배열을 돌면서 true이면 answer에 해당하는 값 더해가면0
+배열을 따로 만들어줄 필요없이 included 배열을 돌면서 true이면 answer에 해당하는 값 더해가면o
+
+stream으로 한줄 코딩도 가능
  */
 
 public class Day5_2 {
