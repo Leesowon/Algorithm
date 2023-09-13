@@ -13,9 +13,14 @@ import java.util.*;
 public class Baek_2438 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        System.out.print("찍을 별의 갯수 : ");
         int N = sc.nextInt();
+
         for(int i=1 ; i<=N ; i++){
-            for(int j=0 ; j<i ; j++){
+            for(int j=0 ; j<N-i ; j++){
+                System.out.print(" ");
+            }
+            for(int k=0 ; k<i ; k++){
                 System.out.print("*");
             }
             System.out.println();
