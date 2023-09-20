@@ -11,9 +11,21 @@ public class Baek_10818 {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int [] arr = new int[n];
+
+        for(int i=0 ; i<arr.length ; i++){
+            arr[i] = sc.nextInt();
+        }
+
+        Arrays.sort(arr); // 배열의 원소를 오름차순으로 정렬
+        // min = arr[0], max = arr[n-1]
+        System.out.println(arr[0] + " " + arr[n-1]);
+
+        sc.close();
+
+        /*
 //        int max = Integer.MIN_VALUE;
 //        int min = Integer.MAX_VALUE;
-        int max = -1000000;
+        int max = 1;
         int min = 1000000;
         for(int i=0 ; i<n ; i++){
             arr[i] = sc.nextInt();
@@ -22,12 +34,15 @@ public class Baek_10818 {
         for(int i=0 ; i<n ; i++){
             if(max<arr[i]){
                 max = arr[i];
+                System.out.println("max : " + max);
             } else if (min>arr[i]) {
                 min = arr[i];
+                System.out.println("min : " + min);
             } else{
                 continue;
             }
         }
         System.out.print(min + " " + max);
+         */
     }
 }
