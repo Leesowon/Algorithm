@@ -12,7 +12,7 @@ while True:
         if s == '(' or s == '[': # 열린 괄호가 있다면 check 배열에 추가
             check.append(s)
         elif s == ']':  # 닫힌 괄호를 만났는데
-            if len(check) !=0 and check[-1] == '[' : # '('가 들어있었다면
+            if len(check) !=0 and check[-1] == '[' : # '['가 들어있었다면
                 check.pop() # stack 에서 비움
             else:
                 check.append(']')

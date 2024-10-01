@@ -1,26 +1,30 @@
 import sys
 input = sys.stdin.readline
 
-from collections import deque
+def make_pattern(n):
+    if n == 1:
+        return ['*']
 
-n = int(input())
+    # N//3 크기의 패턴을 재귀적으로 만듦
+    smaller_pattern = make_pattern(n // 3)
+    pattern = []
 
-for _ in range(n):
-    s = input()
-    stack = deque()
+    for i in range(n):
+        if (i // (n // 3)) % 3 == 1:  # 중앙 열
+            # 중앙 부분 공백 추가
+            pattern.append(smaller_pattern[i % (n // 3)] + ' ' * (n // 3) + smaller_pattern[i % (n // 3)])
+        else:
+            # 위아래 별 패턴을 세 번 반복
+            pattern.append(smaller_pattern[i % (n // 3)] * 3)
 
-    for i in s:
-        if i == "(" :
-            stack.append(i)
-        elif i == ")":
-            if stack :
-                if stack[-1] == '(':
-                    stack.pop()
-                else:
-                    stack.append(i)
-            else:
-                stack.append(i)
-    if not stack:
-        print('YES')
-    else :
-        print('NO')
+    return pattern
+
+# 입력 받기
+n = int(input().strip())
+
+# 패턴 생성
+result = make_pattern(n)
+
+# 결과 출력
+for line in result:
+    print(line)
