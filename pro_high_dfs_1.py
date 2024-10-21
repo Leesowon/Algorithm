@@ -1,8 +1,4 @@
-# 2024-10-12
-
-num = [1, 1, 1, 1, 1]
-operation = ['+', '-']
-tar = 3
+# 2024-10-21
 
 def solution(numbers, target):
     n = len(numbers)
@@ -11,14 +7,15 @@ def solution(numbers, target):
     def dfs(idx, result) :
         if idx == n :
             if result == target :
-                nonlocal answer
-                ans += 1
+                nonlocal answer # 상위 함수의 변수 참조
+                answer += 1
             return
         else :
             dfs(idx+1, result+numbers[idx])
             dfs(idx+1, result-numbers[idx])
-
     dfs(0,0)
     return answer
 
-print(solution(num, tar))
+num = [1, 1, 1, 1, 1]
+target = 3
+print(solution(num, target))

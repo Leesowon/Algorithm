@@ -1,0 +1,14 @@
+# 2024-10-21
+
+def solution(q, r, code):
+    answer = []
+    for i in range(len(code)):
+        if (i % q == r):
+            answer.append(code[i])
+    return ''.join(answer)
+
+code = "qjnwezgrpirldywt"
+q =3
+r=1
+
+print(solution(q, r, code))
