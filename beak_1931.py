@@ -1,24 +1,23 @@
+# 2024-10-21
+
 import sys
-input = sys.stdin.readline
+input = lambda : sys.stdin.readline()
 
 n = int(input())
-meetings = []
+meeting = []
 
-for _ in range(n): # 대기 회의 개수만큼 반복
-    start, end = map(int, input().split(" ")) # 띄어쓰기를 기준으로 입력
-    meetings.append((start, end))
+# 입력
+for _ in range(n) :
+    start, end = map(int, input().split())
+    meeting.append((start, end))
 
-# meetings = [list(map(int, input().split())) for _ in range(n)]
+meeting.sort(key=lambda x : (x[1],x[0]))
 
-# 종료시간 오름차순 정렬, 시작 시간 오름차순 정렬
-meetings.sort(key=lambda x : (x[1], x[0]))
-
-time = 0 # 끝나는 시간
+cur_end = 0
 cnt = 0
-
-for start_meeting, end_meeting in meetings:
-    if time <= start_meeting : # 끝나고 다서 다음 회의가 시작할 수 있다면
-        time = end_meeting # 끝나는 시간 갱신
-        cnt += 1 # 들어간 회의 추가
+for start, end in meeting :
+    if cur_end <= start :
+        cur_end = end
+        cnt += 1
 
 print(cnt)
