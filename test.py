@@ -1,5 +1,4 @@
-str = "1 2 3 4 5 6 7 8 9"
+str = ["ZRO", "ONE", "TWO", "THR", "FOR", "FIV", "SIX", "SVN", "EGT", "NIN"]
 
-table = [list(map(int, input().split())) for _ in range(3)]
-print(len(table))
-print(len(table[0]))
+for i in range(len(str)):
+    print(i, ":", str[i], end=" ")
