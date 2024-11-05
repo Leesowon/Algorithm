@@ -2,21 +2,14 @@ import sys
 sys.stdin = open("GNS_test_input.txt", "r")
 
 testcase = int(input())
-for tc in range(testcase):
-    tc_num, n = input().split() # n : 문자열 길이
 
+num_dict = {"ZRO" : 0, "ONE" : 1, "TWO" : 2, "THR" :3, "FOR" : 4, "FIV" : 5, "SIX" : 6, "SVN" : 7, "EGT" : 8, "NIN" : 9}
+
+for tc in range(testcase) :
+    tc_num, n = input().split()
     numbers = list(input().split())
-    ali_numbers = ["ZRO", "ONE", "TWO", "THR", "FOR", "FIV", "SIX", "SVN", "EGT", "NIN"]
-    sort_num = []
 
-    for num in numbers :
-        for i in range(len(ali_numbers)) :
-            if num == ali_numbers[i] :
-                sort_num.append(i)
-
-    sort_num.sort()
-
+    # 리스트를 딕셔너리 value를 기준으로 정렬 후 출력
+    numbers.sort(key=lambda x : num_dict[x])
     print(f"{tc_num}")
-    for _ in range(len(sort_num)):
-        for i in sort_num :
-            print(ali_numbers[i], end=" ")
+    print(' '.join(numbers))
