@@ -1,5 +1,8 @@
-def solution(myString, pat):
-    answer = ''
-    idx = myString.rfind(pat)
-    answer = myString[:idx+len(pat)]
-    return answer
+from collections import deque
+
+d = deque()
+d.append((0,3))
+a=0
+b=0
+a,b = d.popleft()
+print(a,b)
