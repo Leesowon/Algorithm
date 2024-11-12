@@ -4,7 +4,7 @@ sys.stdin = open("input.txt", "r")
 for _ in range(10):
     tc = int(input())
     ladder = [list(map(int, input().split())) for _ in range(100)]
-    v = [[False] * 100 for _ in range(100)]
+    # v = [[False] * 100 for _ in range(100)]
 
     dh = [1, 0, 0]
     dw = [0, 1, -1]

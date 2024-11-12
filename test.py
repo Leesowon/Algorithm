@@ -1,8 +1,3 @@
-from collections import deque
+min_value = float('-inf')
 
-d = deque()
-d.append((0,3))
-a=0
-b=0
-a,b = d.popleft()
-print(a,b)
+print(min_value)
