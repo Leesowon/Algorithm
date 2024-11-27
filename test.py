@@ -1,9 +1,15 @@
 
+def solution(prices):
+    stack = []
+    answer = [0] * len(prices)
+    for i in range(len(prices)):
+        if stack != [] :
+            while stack !=[] and stack[-1][1] > prices[i] :
+                past, _ = stack.pop()
+                answer[past] = i-past
+        stack.append([i, prices[i]])
 
-d = {}
+    return answer
 
-d = {'a' : 1}
-d = {'b' : 2}
-d = {'c' : 3}
-
-print(d.keys())
+p = [1,1,1,1,1]
+print(solution(p))
